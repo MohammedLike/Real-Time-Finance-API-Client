@@ -1,8 +1,3 @@
-"""
-Authentication module for Alpha Vantage API
-Handles API key loading and validation
-"""
-
 import os
 from dotenv import load_dotenv
 

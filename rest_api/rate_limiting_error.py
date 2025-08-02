@@ -151,17 +151,6 @@ class ErrorHandler:
                 'is_recoverable': True
             })
         
-        # Check for information messages (often rate limit related)
-        elif "Information" in data:
-            info_msg = data["Information"]
-            result.update({
-                'has_error': True,
-                'error_type': 'rate_limit',
-                'error_message': info_msg,
-                'is_rate_limit': True,
-                'is_recoverable': True
-            })
-        
         # Check if data appears empty or invalid
         elif not any(key.startswith("Time Series") for key in data.keys()):
             if not any(key in ["Meta Data", "Realtime Currency Exchange Rate"] for key in data.keys()):

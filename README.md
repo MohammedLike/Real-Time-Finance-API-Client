@@ -115,8 +115,6 @@ The **Real-Time Finance API Client** is a sophisticated financial analytics plat
 
 #### **Portfolio Optimization Results**
 
-![Portfolio Optimization](visualizations/portfolio_optimization.png)
-
 **Optimized Portfolio Allocation:**
 - **MSFT**: 35% (Core technology holding)
 - **AAPL**: 25% (Stable consumer tech)
@@ -414,7 +412,6 @@ The platform provides comprehensive statistical analysis including:
 ### 📊 Comprehensive Data Analysis Results
 
 #### **Stock Price Trends Analysis**
-![Stock Price Trends](visualizations/stock_price_trends.png)
 
 **Key Observations:**
 - **AAPL**: Stable growth pattern with moderate volatility
@@ -424,7 +421,6 @@ The platform provides comprehensive statistical analysis including:
 - **AMZN**: E-commerce driven growth with market correlation
 
 #### **Correlation Analysis**
-![Correlation Matrix](visualizations/correlation_heatmap.png)
 
 **Correlation Insights:**
 - **Strongest Correlation**: AMZN-MSFT (0.757) - Technology sector synergy
@@ -433,7 +429,6 @@ The platform provides comprehensive statistical analysis including:
 - **Overall Market**: High correlation suggests market-driven movements
 
 #### **Risk-Return Profile Analysis**
-![Risk-Return Analysis](visualizations/risk_return_plot.png)
 
 **Risk-Return Characteristics:**
 | Stock | Annualized Return | Volatility | Sharpe Ratio | VaR (5%) |
@@ -445,7 +440,6 @@ The platform provides comprehensive statistical analysis including:
 | AMZN  | 30.8%            | 41.1%      | 0.75         | -3.17%   |
 
 #### **Volatility and Risk Analysis**
-![Volatility Analysis](visualizations/volatility_analysis.png)
 
 **Risk Metrics Summary:**
 - **Highest Volatility**: TSLA (76.3%) - Electric vehicle market volatility
@@ -454,7 +448,6 @@ The platform provides comprehensive statistical analysis including:
 - **Lowest VaR**: MSFT (-2.34%) - Conservative risk profile
 
 #### **Returns Distribution Analysis**
-![Returns Distribution](visualizations/returns_distribution.png)
 
 **Distribution Characteristics:**
 - **AAPL**: Right-skewed (1.40) with heavy tails (15.36 kurtosis)
@@ -499,8 +492,6 @@ Stock: MSFT
 
 ### 📊 Model Performance Analysis
 
-![Model Performance Comparison](visualizations/model_performance.png)
-
 #### **Comprehensive Model Performance Results**
 
 | Stock | Best Model | RMSE | MAE | R² Score | MSE | Performance Rank |
@@ -523,8 +514,6 @@ Stock: MSFT
 - **GOOGL**: Moderate performance due to market complexity
 
 #### **Feature Importance Analysis**
-
-![Feature Importance](visualizations/feature_importance.png)
 
 **Top 10 Most Important Features for TSLA Prediction:**
 

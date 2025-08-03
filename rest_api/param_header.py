@@ -129,6 +129,5 @@ class QueryParamsBuilder:
         if not symbol or not isinstance(symbol, str):
             return False
         
-        # Basic validation: 1-5 characters, alphanumeric
         symbol = symbol.strip().upper()
         return len(symbol) >= 1 and len(symbol) <= 5 and symbol.isalnum()

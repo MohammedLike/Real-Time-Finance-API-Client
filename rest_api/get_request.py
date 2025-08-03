@@ -41,12 +41,10 @@ class HTTPRequestHandler:
                 timeout=self.timeout
             )
             
-            # Check HTTP status code
             if response.status_code != 200:
                 print(f"❌ HTTP Error {response.status_code}: {response.reason}")
                 return None
             
-            # Parse JSON response
             try:
                 data = response.json()
                 return data
@@ -79,7 +77,7 @@ class HTTPRequestHandler:
         """
         try:
             response = self.session.head(url, timeout=10)
-            return response.status_code in [200, 405]  # 405 is OK for HEAD on some APIs
+            return response.status_code in [200, 405]  
         except Exception:
             return False
     

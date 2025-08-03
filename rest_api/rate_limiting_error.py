@@ -33,21 +33,17 @@ class RateLimiter:
         """
         now = datetime.now()
         
-        # Reset daily counter if it's a new day
         if now.date() > self.last_reset_date:
             self.daily_calls = 0
             self.last_reset_date = now.date()
         
-        # Check daily limit
         if self.daily_calls >= self.calls_per_day:
             return False
         
-        # Clean old entries (older than 1 minute)
         one_minute_ago = now - timedelta(minutes=1)
         self.call_history = [call_time for call_time in self.call_history 
                            if call_time > one_minute_ago]
         
-        # Check per-minute limit
         return len(self.call_history) < self.calls_per_minute
     
     def record_call(self):
@@ -66,7 +62,6 @@ class RateLimiter:
         if not self.call_history:
             return 0
         
-        # Calculate time since oldest call in current minute
         now = datetime.now()
         one_minute_ago = now - timedelta(minutes=1)
         recent_calls = [call_time for call_time in self.call_history 
@@ -75,7 +70,6 @@ class RateLimiter:
         if len(recent_calls) < self.calls_per_minute:
             return 0
         
-        # Wait until oldest call is more than 1 minute old
         oldest_call = min(recent_calls)
         wait_until = oldest_call + timedelta(minutes=1)
         wait_seconds = (wait_until - now).total_seconds()
@@ -129,7 +123,6 @@ class ErrorHandler:
             })
             return result
         
-        # Check for explicit error messages
         if "Error Message" in data:
             error_msg = data["Error Message"]
             result.update({
@@ -140,7 +133,6 @@ class ErrorHandler:
                 'is_recoverable': 'apikey' not in error_msg.lower()
             })
         
-        # Check for rate limit messages
         elif "Note" in data:
             note_msg = data["Note"]
             result.update({
@@ -151,7 +143,6 @@ class ErrorHandler:
                 'is_recoverable': True
             })
         
-        # Check if data appears empty or invalid
         elif not any(key.startswith("Time Series") for key in data.keys()):
             if not any(key in ["Meta Data", "Realtime Currency Exchange Rate"] for key in data.keys()):
                 result.update({

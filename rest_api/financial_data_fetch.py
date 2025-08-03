@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 import os
-from authentication import AuthenticationManager  # Removed dot to work in script context
+from authentication import AuthenticationManager 
 
 class StockDataFetcher:
     def __init__(self, api_key):
@@ -28,7 +28,6 @@ class StockDataFetcher:
                 df = df.sort_index()
                 df = df.astype(float)
 
-                # Save to CSV
                 os.makedirs("data", exist_ok=True)
                 file_path = f"data/{symbol}_daily.csv"
                 df.to_csv(file_path)
@@ -53,7 +52,6 @@ class StockDataFetcher:
         return all_data
 
 
-# Optional direct execution for testing
 if __name__ == "__main__":
     auth = AuthenticationManager()
     api_key = auth.get_api_key()
